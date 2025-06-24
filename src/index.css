@@ -170,6 +170,53 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
   }
 
+  /* Neomorphism button styles */
+  .theme-neo-button {
+    @apply transition-all duration-300 cursor-pointer border-none;
+  }
+
+  .dark-theme .theme-neo-button {
+    background: #362c5d;
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.3),
+      -8px -8px 16px rgba(255, 255, 255, 0.1);
+  }
+
+  .dark-theme .theme-neo-button:hover {
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.4),
+      -12px -12px 24px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .dark-theme .theme-neo-button:active {
+    box-shadow: 
+      inset 8px 8px 16px rgba(0, 0, 0, 0.3),
+      inset -8px -8px 16px rgba(255, 255, 255, 0.1);
+    transform: translateY(0px);
+  }
+
+  .light-theme .theme-neo-button {
+    background: #fef7f7;
+    box-shadow: 
+      8px 8px 16px rgba(255, 28, 103, 0.1),
+      -8px -8px 16px rgba(255, 255, 255, 0.8);
+  }
+
+  .light-theme .theme-neo-button:hover {
+    box-shadow: 
+      12px 12px 24px rgba(255, 28, 103, 0.15),
+      -12px -12px 24px rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+  }
+
+  .light-theme .theme-neo-button:active {
+    box-shadow: 
+      inset 8px 8px 16px rgba(255, 28, 103, 0.1),
+      inset -8px -8px 16px rgba(255, 255, 255, 0.8);
+    transform: translateY(0px);
+  }
+
   .theme-primary-button {
     @apply backdrop-blur-xl border transition-all duration-300 font-semibold;
     background: linear-gradient(135deg, #ff1c67, #ff4585);

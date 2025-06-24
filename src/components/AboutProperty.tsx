@@ -3,7 +3,8 @@ import { ChevronDown } from 'lucide-react';
 
 const AboutProperty = () => {
   const handleReadMoreClick = () => {
-    console.log('Read more clicked');
+    console.log('Read more clicked - expanding property description');
+    // Add functionality to expand/collapse description
   };
 
   return (
@@ -24,9 +25,9 @@ const AboutProperty = () => {
       
       <button 
         onClick={handleReadMoreClick}
-        className="mt-4 flex items-center space-x-2 theme-text-accent transition-colors duration-300 p-3 rounded-lg theme-glass-button w-full justify-center"
+        className="mt-4 flex items-center space-x-2 theme-text-accent transition-all duration-300 p-4 rounded-2xl theme-neo-button w-full justify-center"
       >
-        <span className="font-medium text-sm drop-shadow-sm">Read More</span>
+        <span className="font-medium text-sm drop-shadow-sm font-montserrat">Read More</span>
         <ChevronDown className="w-4 h-4 drop-shadow-sm" />
       </button>
     </div>

@@ -4,10 +4,12 @@ import { User, Phone, MessageCircle, Shield } from 'lucide-react';
 const ContactOwner = () => {
   const handleChatClick = () => {
     console.log('Starting chat with property owner...');
+    // Add functionality to open chat interface
   };
 
   const handleCallClick = () => {
     console.log('Calling property owner...');
+    // Add functionality to initiate call
   };
 
   return (
@@ -34,15 +36,15 @@ const ContactOwner = () => {
       <div className="grid grid-cols-2 gap-4">
         <button 
           onClick={handleChatClick}
-          className="py-4 px-4 rounded-2xl theme-primary-button flex items-center justify-center space-x-2"
+          className="py-4 px-4 rounded-2xl theme-neo-button flex items-center justify-center space-x-2 theme-text-primary"
         >
           <MessageCircle className="w-5 h-5 drop-shadow-sm" />
-          <span className="drop-shadow-sm font-montserrat">Chat Now</span>
+          <span className="drop-shadow-sm font-montserrat font-semibold">Chat Now</span>
         </button>
         
         <button 
           onClick={handleCallClick}
-          className="py-4 px-4 rounded-2xl theme-glass-button theme-text-primary font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+          className="py-4 px-4 rounded-2xl theme-neo-button theme-text-primary font-semibold flex items-center justify-center space-x-2"
         >
           <Phone className="w-5 h-5" />
           <span className="font-montserrat">Call Now</span>

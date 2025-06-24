@@ -5,10 +5,15 @@ import { useTheme } from './ThemeProvider';
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
+  const handleToggleClick = () => {
+    console.log(`Switching theme from ${theme} to ${theme === 'light' ? 'dark' : 'light'}`);
+    toggleTheme();
+  };
+
   return (
     <button
-      onClick={toggleTheme}
-      className="relative p-3 rounded-2xl backdrop-blur-xl border border-white/10 transition-all duration-300 overflow-hidden group theme-glass-button"
+      onClick={handleToggleClick}
+      className="relative p-3 rounded-2xl theme-neo-button overflow-hidden group"
     >
       <div className="relative z-10 flex items-center justify-center">
         {theme === 'light' ? (
