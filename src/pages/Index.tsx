@@ -1,78 +1,38 @@
 
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import HumanoidSection from "@/components/HumanoidSection";
-import SpecsSection from "@/components/SpecsSection";
-import DetailsSection from "@/components/DetailsSection";
-import ImageShowcaseSection from "@/components/ImageShowcaseSection";
-import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
-import MadeByHumans from "@/components/MadeByHumans";
-import Footer from "@/components/Footer";
+import Header from "../components/Header";
+import ImageGallery from "../components/ImageGallery";
+import ApartmentInfo from "../components/ApartmentInfo";
+import MoveInDetails from "../components/MoveInDetails";
+import AboutProperty from "../components/AboutProperty";
+import PremiumAmenities from "../components/PremiumAmenities";
+import ContactOwner from "../components/ContactOwner";
+import SimilarProperties from "../components/SimilarProperties";
+import Footer from "../components/Footer";
 
 const Index = () => {
-  // Initialize intersection observer to detect when elements enter viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observer.observe(el));
-    
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
-  useEffect(() => {
-    // This helps ensure smooth scrolling for the anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href')?.substring(1);
-        if (!targetId) return;
-        
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-        
-        // Increased offset to account for mobile nav
-        const offset = window.innerWidth < 768 ? 100 : 80;
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - offset,
-          behavior: 'smooth'
-        });
-      });
-    });
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
-        <Hero />
-        <HumanoidSection />
-        <SpecsSection />
-        <DetailsSection />
-        <ImageShowcaseSection />
-        <Features />
-        <Testimonials />
-        <Newsletter />
-        <MadeByHumans />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white relative overflow-x-hidden">
+      {/* Modern gradient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-pink-900/10"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-pink-500/5 via-transparent to-violet-500/5"></div>
+      
+      <div className="relative z-10">
+        <Header />
+        <main className="pb-24 px-4 max-w-md mx-auto lg:max-w-2xl space-y-6">
+          <ImageGallery />
+          <div className="space-y-6">
+            <ApartmentInfo />
+            <div className="grid gap-6">
+              <MoveInDetails />
+              <AboutProperty />
+            </div>
+            <PremiumAmenities />
+            <ContactOwner />
+            <SimilarProperties />
+          </div>
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
