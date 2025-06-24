@@ -13,35 +13,35 @@ const Footer = () => {
         {/* Active tab */}
         <button 
           onClick={() => handleTabClick('Home')}
-          className="flex flex-col items-center space-y-2 theme-text-accent transition-all duration-300 py-3 px-3 rounded-2xl theme-primary-button"
+          className="flex flex-col items-center space-y-2 transition-all duration-300 py-3 px-3 rounded-2xl theme-primary-button"
         >
-          <Home className="w-6 h-6 drop-shadow-lg" />
-          <span className="text-xs font-medium drop-shadow-sm font-montserrat">Home</span>
+          <Home className="w-6 h-6 drop-shadow-lg theme-tab-icon" />
+          <span className="text-xs font-medium drop-shadow-sm font-montserrat theme-tab-icon">Home</span>
         </button>
         
         <button 
           onClick={() => handleTabClick('Search')}
-          className="flex flex-col items-center space-y-2 theme-text-secondary hover:theme-text-accent transition-all duration-300 py-3 px-3 rounded-2xl theme-neo-button"
+          className="flex flex-col items-center space-y-2 transition-all duration-300 py-3 px-3 rounded-2xl theme-neo-button"
         >
-          <Search className="w-6 h-6" />
-          <span className="text-xs font-montserrat">Search</span>
+          <Search className="w-6 h-6 theme-tab-icon" />
+          <span className="text-xs font-montserrat theme-tab-icon">Search</span>
         </button>
         
         <button 
           onClick={() => handleTabClick('Saved')}
-          className="flex flex-col items-center space-y-2 theme-text-secondary hover:theme-text-accent transition-all duration-300 py-3 px-3 rounded-2xl theme-neo-button relative"
+          className="flex flex-col items-center space-y-2 transition-all duration-300 py-3 px-3 rounded-2xl theme-neo-button relative"
         >
-          <Heart className="w-6 h-6" />
-          <span className="text-xs font-montserrat">Saved</span>
+          <Heart className="w-6 h-6 theme-tab-icon" />
+          <span className="text-xs font-montserrat theme-tab-icon">Saved</span>
           <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-[#ff1c67] to-[#ff4585] rounded-full animate-pulse shadow-lg"></div>
         </button>
         
         <button 
           onClick={() => handleTabClick('Profile')}
-          className="flex flex-col items-center space-y-2 theme-text-secondary hover:theme-text-accent transition-all duration-300 py-3 px-3 rounded-2xl theme-neo-button"
+          className="flex flex-col items-center space-y-2 transition-all duration-300 py-3 px-3 rounded-2xl theme-neo-button"
         >
-          <User className="w-6 h-6" />
-          <span className="text-xs font-montserrat">Profile</span>
+          <User className="w-6 h-6 theme-tab-icon" />
+          <span className="text-xs font-montserrat theme-tab-icon">Profile</span>
         </button>
       </div>
     </footer>

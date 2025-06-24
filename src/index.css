@@ -121,99 +121,115 @@
   }
 
   .dark-theme .theme-glass-card {
-    background: rgba(54, 44, 93, 0.3);
+    background: rgba(54, 44, 93, 0.4);
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 8px 16px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .light-theme .theme-glass-card {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.3);
     border-color: rgba(255, 28, 103, 0.1);
     box-shadow: 
-      0 8px 32px rgba(255, 28, 103, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      0 20px 40px rgba(255, 28, 103, 0.15),
+      0 8px 16px rgba(255, 28, 103, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
   .theme-glass-button {
     @apply backdrop-blur-xl border transition-all duration-300;
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.2), rgba(255, 69, 133, 0.2));
   }
 
   .dark-theme .theme-glass-button {
-    background: rgba(54, 44, 93, 0.4);
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.3), rgba(255, 69, 133, 0.3));
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 
-      0 4px 16px rgba(0, 0, 0, 0.2),
+      0 8px 20px rgba(255, 28, 103, 0.2),
+      0 4px 10px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .dark-theme .theme-glass-button:hover {
-    background: rgba(54, 44, 93, 0.6);
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.4), rgba(255, 69, 133, 0.4));
     box-shadow: 
-      0 6px 20px rgba(0, 0, 0, 0.3),
+      0 12px 30px rgba(255, 28, 103, 0.3),
+      0 6px 15px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
 
   .light-theme .theme-glass-button {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 28, 103, 0.1);
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.15), rgba(255, 69, 133, 0.15));
+    border-color: rgba(255, 28, 103, 0.2);
     box-shadow: 
-      0 4px 16px rgba(255, 28, 103, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  }
-
-  .light-theme .theme-glass-button:hover {
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 
-      0 6px 20px rgba(255, 28, 103, 0.15),
+      0 8px 20px rgba(255, 28, 103, 0.15),
+      0 4px 10px rgba(255, 28, 103, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
   }
 
-  /* Neomorphism button styles */
+  .light-theme .theme-glass-button:hover {
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.25), rgba(255, 69, 133, 0.25));
+    box-shadow: 
+      0 12px 30px rgba(255, 28, 103, 0.2),
+      0 6px 15px rgba(255, 28, 103, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  /* Neomorphism button styles with pink gradients */
   .theme-neo-button {
     @apply transition-all duration-300 cursor-pointer border-none;
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.3), rgba(255, 69, 133, 0.3));
   }
 
   .dark-theme .theme-neo-button {
-    background: #362c5d;
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.4), rgba(255, 69, 133, 0.4), #362c5d);
     box-shadow: 
-      8px 8px 16px rgba(0, 0, 0, 0.3),
-      -8px -8px 16px rgba(255, 255, 255, 0.1);
+      8px 8px 16px rgba(0, 0, 0, 0.4),
+      -8px -8px 16px rgba(255, 28, 103, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .dark-theme .theme-neo-button:hover {
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.5), rgba(255, 69, 133, 0.5), #362c5d);
     box-shadow: 
-      12px 12px 24px rgba(0, 0, 0, 0.4),
-      -12px -12px 24px rgba(255, 255, 255, 0.15);
+      12px 12px 24px rgba(0, 0, 0, 0.5),
+      -12px -12px 24px rgba(255, 28, 103, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
   }
 
   .dark-theme .theme-neo-button:active {
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.3), rgba(255, 69, 133, 0.3), #362c5d);
     box-shadow: 
-      inset 8px 8px 16px rgba(0, 0, 0, 0.3),
-      inset -8px -8px 16px rgba(255, 255, 255, 0.1);
+      inset 8px 8px 16px rgba(0, 0, 0, 0.4),
+      inset -8px -8px 16px rgba(255, 28, 103, 0.1);
     transform: translateY(0px);
   }
 
   .light-theme .theme-neo-button {
-    background: #fef7f7;
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.2), rgba(255, 69, 133, 0.2), #fef7f7);
     box-shadow: 
-      8px 8px 16px rgba(255, 28, 103, 0.1),
-      -8px -8px 16px rgba(255, 255, 255, 0.8);
+      8px 8px 16px rgba(255, 28, 103, 0.15),
+      -8px -8px 16px rgba(255, 255, 255, 0.9),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 
   .light-theme .theme-neo-button:hover {
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.3), rgba(255, 69, 133, 0.3), #fef7f7);
     box-shadow: 
-      12px 12px 24px rgba(255, 28, 103, 0.15),
-      -12px -12px 24px rgba(255, 255, 255, 0.9);
+      12px 12px 24px rgba(255, 28, 103, 0.2),
+      -12px -12px 24px rgba(255, 255, 255, 1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
     transform: translateY(-2px);
   }
 
   .light-theme .theme-neo-button:active {
+    background: linear-gradient(135deg, rgba(255, 28, 103, 0.15), rgba(255, 69, 133, 0.15), #fef7f7);
     box-shadow: 
-      inset 8px 8px 16px rgba(255, 28, 103, 0.1),
-      inset -8px -8px 16px rgba(255, 255, 255, 0.8);
+      inset 8px 8px 16px rgba(255, 28, 103, 0.15),
+      inset -8px -8px 16px rgba(255, 255, 255, 0.9);
     transform: translateY(0px);
   }
 
@@ -261,5 +277,10 @@
 
   .theme-text-accent {
     color: #ff1c67;
+  }
+
+  .theme-tab-icon {
+    @apply transition-colors duration-300;
+    color: white !important;
   }
 }
