@@ -29,14 +29,22 @@ const SimilarProperties = () => {
     }
   ];
 
+  const handlePropertyClick = (propertyTitle: string) => {
+    console.log(`${propertyTitle} clicked`);
+  };
+
+  const handleViewDetails = () => {
+    console.log('View details clicked');
+  };
+
   return (
-    <div className="backdrop-blur-3xl bg-slate-800/60 rounded-2xl p-5 border border-slate-600/30 shadow-[20px_20px_40px_rgba(0,0,0,0.6),-20px_-20px_40px_rgba(255,255,255,0.02)]">
-      <h3 className="text-lg font-bold mb-4 flex items-center space-x-2 text-white">
-        <Home className="w-5 h-5 text-pink-400 drop-shadow-sm" />
+    <div className="theme-glass-card rounded-2xl p-5">
+      <h3 className="text-lg font-bold mb-4 flex items-center space-x-2 theme-text-primary font-montserrat">
+        <Home className="w-5 h-5 theme-text-accent drop-shadow-sm" />
         <span className="drop-shadow-lg">Similar Properties You Might Like</span>
       </h3>
       
-      <div className="text-sm text-slate-400 mb-4">
+      <div className="text-sm theme-text-secondary mb-4">
         Neighborhood recommendations based on your preferences
       </div>
       
@@ -44,32 +52,34 @@ const SimilarProperties = () => {
         {properties.map((property, index) => (
           <div 
             key={index}
-            className="flex space-x-4 p-4 rounded-xl backdrop-blur-xl bg-slate-700/40 border border-slate-600/30 shadow-[8px_8px_16px_rgba(0,0,0,0.4),-8px_-8px_16px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(255,255,255,0.05)] hover:shadow-[4px_4px_8px_rgba(0,0,0,0.4),-4px_-4px_8px_rgba(255,255,255,0.05),inset_1px_1px_2px_rgba(255,255,255,0.05)] transition-all duration-300"
+            className="flex space-x-4 p-4 rounded-xl theme-glass-button transition-all duration-300 cursor-pointer"
+            onClick={() => handlePropertyClick(property.title)}
           >
             <img 
               src={property.image} 
               alt={property.title}
-              className="w-16 h-12 rounded-lg object-cover flex-shrink-0 shadow-[4px_4px_8px_rgba(0,0,0,0.6)] border border-slate-600/30"
+              className="w-16 h-12 rounded-lg object-cover flex-shrink-0 shadow-lg border border-white/10"
             />
             <div className="flex-1 min-w-0">
-              <h4 className="font-semibold text-white truncate text-sm drop-shadow-sm">{property.title}</h4>
-              <p className="text-xs text-slate-400">{property.location}</p>
-              <p className="text-xs text-slate-500">{property.details}</p>
+              <h4 className="font-semibold theme-text-primary truncate text-sm drop-shadow-sm font-montserrat">{property.title}</h4>
+              <p className="text-xs theme-text-secondary">{property.location}</p>
+              <p className="text-xs theme-text-secondary opacity-75">{property.details}</p>
               <div className="flex items-center justify-between mt-2">
-                {/* Skeuomorphic status badge */}
-                <span className="text-xs bg-gradient-to-br from-green-500/20 to-green-600/20 text-green-400 px-2 py-1 rounded backdrop-blur-xl border border-green-500/20 shadow-[inset_1px_1px_2px_rgba(255,255,255,0.1),inset_-1px_-1px_2px_rgba(0,0,0,0.3)] drop-shadow-sm">
+                <span className="text-xs bg-gradient-to-br from-green-500/20 to-green-600/20 text-green-400 px-2 py-1 rounded backdrop-blur-xl border border-green-500/20 drop-shadow-sm">
                   {property.status}
                 </span>
-                <span className="font-bold text-white text-sm drop-shadow-sm">{property.price}</span>
+                <span className="font-bold theme-text-primary text-sm drop-shadow-sm font-montserrat">{property.price}</span>
               </div>
             </div>
           </div>
         ))}
       </div>
       
-      {/* Neomorphism button */}
-      <button className="w-full mt-4 py-3 rounded-xl bg-slate-800 backdrop-blur-xl border border-pink-500/20 text-pink-400 font-medium shadow-[8px_8px_16px_rgba(0,0,0,0.6),-8px_-8px_16px_rgba(255,255,255,0.05)] hover:shadow-[4px_4px_8px_rgba(0,0,0,0.6),-4px_-4px_8px_rgba(255,255,255,0.05)] transition-all duration-300 text-sm">
-        <span className="drop-shadow-sm">View Details</span>
+      <button 
+        onClick={handleViewDetails}
+        className="w-full mt-4 py-3 rounded-xl theme-glass-button theme-text-accent font-medium transition-all duration-300 text-sm"
+      >
+        <span className="drop-shadow-sm font-montserrat">View Details</span>
       </button>
     </div>
   );

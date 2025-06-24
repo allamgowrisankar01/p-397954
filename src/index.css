@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,19 +39,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -99,31 +93,126 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-foreground min-h-screen;
+    font-family: 'Roboto', sans-serif;
+    @apply text-foreground min-h-screen transition-all duration-500;
+  }
+
+  /* Dark theme styles */
+  .dark-theme body {
+    background: linear-gradient(135deg, #362c5d 0%, #2a1f4f 50%, #1e1640 100%);
     background-attachment: fixed;
+  }
+
+  /* Light theme styles */
+  .light-theme body {
+    background: linear-gradient(135deg, #fef7f7 0%, #fdf2f8 50%, #fce7f3 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
   }
 }
 
-/* Custom neomorphism and glassmorphism utilities */
+/* Theme-aware glassmorphism utilities */
 @layer utilities {
-  .neo-inset {
-    box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.6), inset -8px -8px 16px rgba(255, 255, 255, 0.05);
+  .theme-glass-card {
+    @apply backdrop-blur-xl border transition-all duration-300;
   }
-  
-  .neo-outset {
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6), -8px -8px 16px rgba(255, 255, 255, 0.05);
-  }
-  
-  .glass-card {
-    backdrop-filter: blur(20px);
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .skeu-button {
+
+  .dark-theme .theme-glass-card {
+    background: rgba(54, 44, 93, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.4),
-      inset 2px 2px 4px rgba(255, 255, 255, 0.2),
-      inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .light-theme .theme-glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 28, 103, 0.1);
+    box-shadow: 
+      0 8px 32px rgba(255, 28, 103, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .theme-glass-button {
+    @apply backdrop-blur-xl border transition-all duration-300;
+  }
+
+  .dark-theme .theme-glass-button {
+    background: rgba(54, 44, 93, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 4px 16px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .dark-theme .theme-glass-button:hover {
+    background: rgba(54, 44, 93, 0.6);
+    box-shadow: 
+      0 6px 20px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .light-theme .theme-glass-button {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 28, 103, 0.1);
+    box-shadow: 
+      0 4px 16px rgba(255, 28, 103, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  .light-theme .theme-glass-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 
+      0 6px 20px rgba(255, 28, 103, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .theme-primary-button {
+    @apply backdrop-blur-xl border transition-all duration-300 font-semibold;
+    background: linear-gradient(135deg, #ff1c67, #ff4585);
+    border-color: rgba(255, 28, 103, 0.3);
+    color: white;
+    box-shadow: 
+      0 8px 25px rgba(255, 28, 103, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .theme-primary-button:hover {
+    background: linear-gradient(135deg, #e61859, #ff4585);
+    box-shadow: 
+      0 12px 35px rgba(255, 28, 103, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .theme-text-primary {
+    @apply transition-colors duration-300;
+  }
+
+  .dark-theme .theme-text-primary {
+    color: white;
+  }
+
+  .light-theme .theme-text-primary {
+    color: #362c5d;
+  }
+
+  .theme-text-secondary {
+    @apply transition-colors duration-300;
+  }
+
+  .dark-theme .theme-text-secondary {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .light-theme .theme-text-secondary {
+    color: rgba(54, 44, 93, 0.7);
+  }
+
+  .theme-text-accent {
+    color: #ff1c67;
   }
 }
